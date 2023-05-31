@@ -10,14 +10,27 @@ function processTransactions(transActions) {
     }
 
     // ? why we using an ojbect whnen 
-    let txCount = {}
+    //let txCount = {};
 
-    const numberOfTransactions = transActions.length;
+    //const numberOfTransactions = transActions.length;
 
-    for(var i = 0; i < numberOfTransactions; i++) {
-        const transaction = transActions[i];
+    let txCount = {};
+    transActions.forEach((transaction) => {
         txCount[transaction] ? txCount[transaction] += 1 : txCount[transaction] = 1;
-    }
+        });
+
+    // for(var i = 0; i < numberOfTransactions; i++) {
+    //     const transaction = transActions[i];
+    //     txCount[transaction] ? txCount[transaction] += 1 : txCount[transaction] = 1;
+    // }
+
+    // const sumWithInitial = array1.reduce(
+//   (accumulator, currentValue) => accumulator + currentValue,
+//   initialValue
+// );
+    
+
+     
 
     txCount = sortByAmountThenName(txCount);
     
