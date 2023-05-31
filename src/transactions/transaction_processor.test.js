@@ -4,6 +4,10 @@ test('check transaction processing when empty', () => {
     expect(processTransactions([])).toEqual([]);
 });
 
+// test('check transaction processing when adding null and items', () => {
+//     expect(processTransactions(['jumper', , 'jeans'])).toEqual(['jeans 1', 'jumper 1']);
+// });
+
 test('check transaction processing exception thrown when null passed', () => {
     expect(() => processTransactions(null)).toThrow();
 });

@@ -1,13 +1,15 @@
-var txr = [];
+// changed var to const
+//let txr = [];
 
 function processTransactions(transActions) {
 
-    txr = [];
+    let txr = [];
 
     if(!validateTransactions(transActions)) {
         throw new Error("Undefined collection of transactions")
     }
 
+    // ? why we using an ojbect whnen 
     let txCount = {}
 
     const numberOfTransactions = transActions.length;
@@ -40,13 +42,6 @@ function sortByAmountThenName(txCount) {
     return sortedResults;
 }
 
-
-function validateTransactions(transactions) {
-    if(transactions === undefined) {
-        return false;
-    } 
-
-    return true;
-}
+const validateTransactions = (transactions) => !(transactions === undefined);
 
 module.exports = processTransactions;
